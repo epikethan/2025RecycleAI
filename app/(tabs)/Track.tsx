@@ -2,7 +2,7 @@ import ImageButton from "@/components/ImageButton";
 import ImageViewer from "@/components/ImageViewer";
 import * as ImagePicker from "expo-image-picker";
 import { useState } from 'react';
-import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+import { Button, StyleSheet, Text, View } from "react-native";
 
 const PlaceholderImage = require("../../assets/images/background-image.png");
 
@@ -38,13 +38,7 @@ export default function index() {
           <ImageViewer imgSource={PlaceholderImage} selectedImage = {selectedImage} />
         </View>
         <View style={styles.footerContainer}>
-          <ImageButton label = "Choose a photo" theme="primary" onPress = {pickImageAsync} />
-        </View>
-        <View>
-          <TextInput style={styles.input} onChangeText={setName} value={name} placeholder="Type Name" placeholderTextColor="#4d2d18"/>
-        </View>
-        <View>
-          <TextInput style={styles.input} onChangeText={setQuantity} value={quantity} placeholder="Type Quantity" placeholderTextColor="#4d2d18"/>
+          <ImageButton label = " Choose a photo" theme="primary" onPress = {pickImageAsync} />
         </View>
         
         <View style={styles.footerContainer}>
