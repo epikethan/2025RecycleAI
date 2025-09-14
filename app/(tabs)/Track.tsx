@@ -3,6 +3,7 @@ import ImageViewer from "@/components/ImageViewer";
 import * as ImagePicker from "expo-image-picker";
 import { useState } from 'react';
 import { Button, StyleSheet, Text, View } from "react-native";
+import { storage } from "../storage";
 
 const PlaceholderImage = require("../../assets/images/background-image.png");
 
@@ -42,7 +43,12 @@ export default function index() {
         </View>
         
         <View style={styles.footerContainer}>
-          <Button title="add" onPress={()=>{setIsAdded(true)}}/>
+          <Button title="add" 
+            onPress={
+              async ()=>{
+                //setIsAdded(true), 
+                storage.SavePoints(100)
+              }}/>  
         </View>
       </View>
     );
