@@ -9,6 +9,7 @@ const App = () => {
     <Calendar
       onDayPress={day => {
         setSelected(day.dateString);
+<<<<<<< HEAD
         console.log('selected day', day);
         day.dateString
       }}
@@ -27,6 +28,12 @@ const App = () => {
       }}
       
       
+=======
+      }}
+      markedDates={{
+        [selected]: {selected: true, disableTouchEvent: true, selectedColor: 'orange'}
+      }}
+>>>>>>> 6f290603cc022cb37744f54e48cc298de9dd20c0
     />
   );
 };
