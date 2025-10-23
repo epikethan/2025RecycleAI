@@ -2,6 +2,10 @@ import { Ionicons } from "@expo/vector-icons";
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Tabs } from "expo-router";
 
+import { loadTensorflowModel } from 'react-native-fast-tflite';
+
+const model = await loadTensorflowModel(require('../../assets/models/model.tflite'))
+
 export default function TabsLayout() {
   return (
     <Tabs
@@ -18,27 +22,27 @@ export default function TabsLayout() {
       }}
     >
       <Tabs.Screen 
-        name="Track"
+        name="index"
         options={{
-          headerTitle: "Track",
+          title: "Track",
           tabBarIcon: ({focused, color}) => <FontAwesome name="recycle" size={24} color= {color} />
         }}
       />
       <Tabs.Screen 
         name="Calendar"
         options={{
-          headerTitle: "Calendar",
+          title: "Calendar",
           tabBarIcon: ({focused, color}) => <Ionicons name={focused ? "calendar-sharp" : "calendar-outline"} color = {color} size = {24} />
         }}
       />
       <Tabs.Screen 
         name="Rewards"
         options={{
-          headerTitle: "Rewards",
+          title: "Rewards",
           tabBarIcon: ({focused, color}) => <Ionicons name={focused ? "gift-sharp" : "gift-outline"} color = {color} size = {24} />
         }}
       />
-      <Tabs.Screen name = "+not-found" options={{}} />
+      {/*<Tabs.Screen name = "+not-found" options={{}} />*/}
     </Tabs>
   );
 }

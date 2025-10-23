@@ -1,4 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
+import { storage } from "../storage";
+
+var currentPoints = storage.LoadPoints();
 
 export default function RewardScreen() {
   return (
@@ -10,6 +13,8 @@ export default function RewardScreen() {
 
 const styles = StyleSheet.create({
   container: {
+    borderWidth: 10,
+    borderColor: "#102820",
     flex: 1,
     justifyContent: "center",
     alignItems: "center",

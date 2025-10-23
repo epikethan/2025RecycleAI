@@ -7,6 +7,7 @@ import { storage } from "../storage";
 
 const PlaceholderImage = require("../../assets/images/background-image.png");
 
+
 export default function index() {
   const [selectedImage, setSelectedImage] = useState<string | undefined>(undefined);
   const [name, setName] = useState('');
@@ -39,7 +40,7 @@ export default function index() {
           <ImageViewer imgSource={PlaceholderImage} selectedImage = {selectedImage} />
         </View>
         <View style={styles.footerContainer}>
-          <ImageButton label = " Choose a photo" theme="primary" onPress = {pickImageAsync} />
+          <ImageButton label = " choose a photo" theme="primary" onPress = {pickImageAsync} />
         </View>
         
         <View style={styles.footerContainer}>
@@ -47,7 +48,8 @@ export default function index() {
             onPress={
               async ()=>{
                 //setIsAdded(true), 
-                storage.SavePoints(100)
+                
+                storage.SavePoints(100);
               }}/>  
         </View>
       </View>
@@ -58,6 +60,8 @@ export default function index() {
 
 const styles = StyleSheet.create({
   container: {
+    borderWidth: 10,
+    borderColor: "#102820",
     flex: 1,
     alignItems: "center",
     backgroundColor: "#102820",
