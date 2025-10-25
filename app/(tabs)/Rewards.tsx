@@ -1,7 +1,4 @@
 import { StyleSheet, Text, View } from "react-native";
-import { storage } from "../storage";
-
-var currentPoints = storage.LoadPoints();
 
 export default function RewardScreen() {
   return (
