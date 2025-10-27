@@ -1,3 +1,4 @@
+import * as FileSystem from 'expo-file-system';
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import moment from 'moment';
@@ -6,7 +7,18 @@ import { storage } from "./storage";
 
 import { loadTensorflowModel } from 'react-native-fast-tflite';
 
-const model = await loadTensorflowModel(require('../../assets/models/model.tflite'))
+const modelPath = FileSystem.documentDirectory + 'model.tflite';
+
+const model = await loadTensorflowModel(modelPath);
+/*
+import * as FileSystem from 'expo-file-system';
+import { loadTensorflowModel } from 'react-native-fast-tflite';
+
+const modelPath = FileSystem.documentDirectory + 'model.tflite';
+
+// If you’ve downloaded the file before, load it
+const model = await loadTensorflowModel(modelPath);
+*/
 
 LogBox.ignoreAllLogs(true);
 
